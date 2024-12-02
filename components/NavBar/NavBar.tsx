@@ -11,14 +11,14 @@ import useScroll from "../../utils/useScroll"
 
 const Logo = () => (
   <Link href="/">
-    <div className={style.logo}>
+    {/* <div className={style.logo}>
       <Image
         src="/images/logo.png"
         alt="Omar Diop, Logo"
         fill={true}
         style={{ objectFit: "contain" }}
       />
-    </div>
+    </div> */}
   </Link>
 )
 
@@ -44,7 +44,7 @@ export function NavBar() {
           </ol>
           <CallToAction
             text={"Contact me"}
-            link="mailto:info@omardiop.com"
+            link="rishav345@gmail.com"
             type="primary_small"
             mode="link"
           />

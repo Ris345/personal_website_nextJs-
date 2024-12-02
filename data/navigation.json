@@ -1,17 +1,22 @@
 [
   {
     "href": "/#about",
-    "prefix": "01.",
+    "prefix": "00.",
     "label": "About"
   },
   {
     "href": "/#events",
-    "prefix": "02.",
+    "prefix": "01.",
     "label": "Events"
   },
   {
     "href": "/#content",
-    "prefix": "03.",
+    "prefix": "02.",
     "label": "Content"
+  },
+  {
+    "href": "/#music",
+    "prefix": "03.",
+    "label": "Music"
   }
 ]

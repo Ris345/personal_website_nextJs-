@@ -15,7 +15,7 @@ export const gradient = style({
   animationIterationCount: "infinite",
   animationTimingFunction: theme.transition,
   filter: "blur(100px)",
-  backgroundImage: `linear-gradient(rgba(0, 227, 169,0.80),#0086DE)`,
+  backgroundImage: `linear-gradient(#054EFA,#CD3C34,#db8f5c)`,
   borderRadius: "30% 70% 70% 30%/30% 30% 70% 70%",
   "@media": {
     "screen and (max-width:576px)": {

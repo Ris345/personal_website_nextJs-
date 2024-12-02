@@ -14,11 +14,11 @@ export const theme = createGlobalTheme(":root", {
     monospace: "Roboto Mono, monospace",
   },
   colors: {
-    background: "#0C0C0C",
-    lightBackground: "#131313",
-    primary: "#00E3A9",
+    background: "#370F08",
+    lightBackground: "#e6d3d0", 
+    primary: "#AB6B61",
     blue: "#56A1FF",
-    red: "#FF703B",
+    red: "#FF703B", 
     grey: "rgba(169,169,169,0.4)",
     darkGrey: "#262626",
     text: {
@@ -42,7 +42,7 @@ export const theme = createGlobalTheme(":root", {
     medium: "1.75rem",
     large: "2.5rem",
   },
-  borderRadius: "4px",
+  borderRadius: "15px",
   transition: "all 0.25s cubic-bezier(0.645,0.045,0.355,1)",
   boxShadow: "rgb(0, 0, 0) 0px 15px 29px -15px",
 })

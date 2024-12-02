@@ -26,8 +26,8 @@ export function Talks() {
     <div className={style.container}>
       <Image
         src={imageSource}
-        alt="Omar Diop"
-        title="Omar Diop"
+        alt="Rishav Acharya"
+        title="Rishav Acharya"
         height={320}
         width={260}
         className={style.image}
