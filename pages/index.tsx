@@ -75,18 +75,18 @@ export default function Home() {
             number="01."
             title="Events"
             align="center"
-            subtitle="You can say hi to me in these events or just talk tech."
+            subtitle="I am the community manager of one of the most popular AI meetups in the world, called AI Camp."
           />
           <Talks />
           <CallToAction
-            text="Got an idea? Get in touch!"
+            text="Got an idea | Get in touch!"
             link="mailto:rishav345@gmail.com"
             type="primary_small"
             mode="link"
           />
         </div>
       </section>
-      <section className={style.section} id="content">
+      <section className={style.section} id="projects">
         <div className={style.sectionInner["leftAlign"]}>
           <SectionTitle
             number="02."
@@ -97,8 +97,10 @@ export default function Home() {
           <div>8by8 Challenge</div>
           <p>The 8by8 Challenge is a web application intended to foster civic engagement by allowing users to perform various actions such as registering to vote or signing up for election reminders in exchange for badges. Users can also share their challenge with friends via social media. When an invited user registers to vote, or takes another similar action, the inviter also receives a badge. When a user receives 8 badges within 8 days, they have completed their challenge.</p>
         </div>
+    <div>Flybird</div>
+    <p>Twitter API has been depreciated but this project showcases a lot of learning from the bootcamp I attended. </p>
       </section>
-      <section className={style.section} id="content">
+      <section className={style.section} id="music">
         <div className={style.sectionInner["leftAlign"]}>
           <SectionTitle
             number="03."

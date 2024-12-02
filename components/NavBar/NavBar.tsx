@@ -11,14 +11,7 @@ import useScroll from "../../utils/useScroll"
 
 const Logo = () => (
   <Link href="/">
-    {/* <div className={style.logo}>
-      <Image
-        src="/images/logo.png"
-        alt="Omar Diop, Logo"
-        fill={true}
-        style={{ objectFit: "contain" }}
-      />
-    </div> */}
+  
   </Link>
 )
 

@@ -9,20 +9,12 @@ export type Talk = {
 
 const talks: Talk[] = [
   {
-    date: new Date(2024, 8, 29),
-    event: "useReactNYC",
-    title: "useReactNYC",
-    type: "",
-    location: "NYC",
-    link: "https://guild.host/events/reactnyc-meetup-doing-055myv",
-  },
-  {
     date: new Date(2024, 8, 15),
     event: "AICamp",
     title: "AICamp",
-    type: "",
+    type: 'event',
     location: "NYC",
-    link: "https://www.aicamp.ai/event/eventdetails/W2024081514",
+    link: "https://www.aicamp.ai/",
   }
 ]
 

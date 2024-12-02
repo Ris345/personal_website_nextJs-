@@ -5,13 +5,13 @@ export function Seo() {
     <DefaultSeo
       title="Rishav A.| Software Engineer"
       description=""
-      canonical="https://riishavdacharya.dev"
+      canonical="https://rishavdacharya.dev"
       openGraph={{
         type: "website",
         locale: "it_IT",
         url: "https://rishavdacharya.dev",
         site_name: "Rishav A| Software Engineer",
-        title: "Rishav| Software Engineer",
+        title: "Rishav A.| Software Engineer",
         description:
           "",
         images: [

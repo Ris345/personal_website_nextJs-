@@ -50,7 +50,7 @@ export function SideMenu() {
             </ol>
             <CallToAction
               text={"Contact me"}
-              link="mailto:info@omardiop.com"
+              link="mailto:rishav345@gmail.com"
               type="primary_small"
               mode="link"
             />
