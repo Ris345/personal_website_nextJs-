@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+
 import { GradientBackground } from "../components/GradientBackground"
 import { CallToAction } from "../components/CallToAction"
 import { RandomQuote } from "../components/RandomQuote"
@@ -6,21 +6,12 @@ import * as style from "../styles/home.css"
 import { Talks } from "../components/Talks"
 import { SectionTitle } from "../components/SectionTitle"
 import Image from "next/image"
-import { DigitalRain, DefaultDuration } from "../components/DigitalRain"
 import profilePic from "../public/images/profile.jpg"
 
 
 
 export default function Home() {
-  const [matrixVisible, toggleMatrix] = useState(false)
-
-  useEffect(() => {
-    if (!matrixVisible) return
-    const timer = setTimeout(() => {
-      toggleMatrix(false)
-    }, DefaultDuration)
-    return () => clearTimeout(timer)
-  }, [matrixVisible])
+ 
 
   return (
     <>

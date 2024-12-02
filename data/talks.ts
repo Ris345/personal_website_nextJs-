@@ -9,10 +9,10 @@ export type Talk = {
 
 const talks: Talk[] = [
   {
-    date: new Date(2024, 8, 15),
+    date: new Date(),
     event: "AICamp",
-    title: "AICamp",
-    type: 'event',
+    title: "",
+    type: '',
     location: "NYC",
     link: "https://www.aicamp.ai/",
   }
