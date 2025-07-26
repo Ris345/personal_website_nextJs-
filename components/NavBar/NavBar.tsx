@@ -37,9 +37,10 @@ export function NavBar() {
           </ol>
           <CallToAction
             text={"Contact me"}
-            link="rishav345@gmail.com"
+            link="https://calendly.com/rishavacharya"
             type="primary_small"
             mode="link"
+            openInNewTab={true}
           />
         </div>
       </nav>

@@ -7,6 +7,7 @@ type ICallToAction =
       link: string
       type: "primary_big" | "primary_small" | "red_big" | "blue_big"
       style?: React.CSSProperties
+      openInNewTab?: boolean
     }
   | {
       mode: "button"
@@ -23,6 +24,8 @@ export function CallToAction(props: ICallToAction) {
           className={styles.button[props.type]}
           href={props.link}
           style={props.style}
+          target={props.openInNewTab ? "_blank" : undefined}
+          rel={props.openInNewTab ? "noopener noreferrer" : undefined}
         >
           {props.text}
         </a>

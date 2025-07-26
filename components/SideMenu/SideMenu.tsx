@@ -50,9 +50,10 @@ export function SideMenu() {
             </ol>
             <CallToAction
               text={"Contact me"}
-              link="mailto:rishav345@gmail.com"
+              link="https://calendly.com/rishavacharya"
               type="primary_small"
               mode="link"
+              openInNewTab={true}
             />
           </div>
         </nav>

@@ -1,38 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rishav Acharya - Personal Website
 
-Design inspired by [Brittany Chiang's website](https://brittanychiang.com)
+## Full Stack Software Engineer & AI Developer
 
-## Getting Started
+**Website:** https://rishavdacharya.dev  
+**Email:** rishav345@gmail.com  
+**GitHub:** https://github.com/Ris345
 
-First, run the development server:
+## About Me
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+I'm a **Full Stack Software Engineer** with expertise in backend development, data integration, and AI-powered systems. My technical stack includes:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Backend:** Node.js, Python, SQL
+- **Frontend:** React, Next.js, TypeScript
+- **AI/ML:** LLMs, AI Agents, Machine Learning
+- **DevOps:** AWS, Docker, CI/CD
+- **Other:** API Design, Data Workflows, System Architecture
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Current Focus
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+I'm currently deepening my understanding of **LLMs and AI agents** with the goal of building full stack systems that integrate AI to solve real business problems. My strength lies in designing APIs, handling data workflows, and making backend systems work smoothly at scale.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Projects
 
-## Learn More
+### 8by8 Challenge
+A web application fostering civic engagement through gamification. Users earn badges for civic actions like voter registration and can invite friends to participate.
 
-To learn more about Next.js, take a look at the following resources:
+**Tech Stack:** React, Node.js, Social Media Integration  
+**Live Demo:** https://challenge.8by8.us/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Flybird
+A comprehensive Twitter showcase application demonstrating advanced web development techniques and API integration.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Tech Stack:** React, Twitter API, Advanced UI/UX  
+**Repository:** https://github.com/Ris345/Twitter-Showcase-App
 
-## Deploy on Vercel
+## Speaking & Events
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **AI Agent SDK Anote** - Technical deep dive into AI agent development
+- **Agentic AI 5 day challenge** - Hands-on workshop on building AI agents
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Music
+
+Beyond software development, I'm also a musician. I believe there's a strong connection between music and software development - both deal with abstractions and creative problem-solving.
+
+**Musical Works:**
+- [Star Jelly Album](https://elijahshiffer.bandcamp.com/album/star-jelly)
+- [Live Performance](https://www.youtube.com/watch?v=ibXAAM9ROQ8&t=594s)
+- [Studio Recording](https://www.youtube.com/watch?v=vFVneyG_S5o)
+
+## Technical Skills
+
+### Programming Languages
+- JavaScript/TypeScript
+- Python
+- SQL
+- HTML/CSS
+
+### Frameworks & Libraries
+- React.js
+- Next.js
+- Node.js
+- Express.js
+
+### Databases & Tools
+- PostgreSQL
+- MongoDB
+- Redis
+- Docker
+
+### Cloud & DevOps
+- AWS
+- Google Cloud Platform
+- CI/CD Pipelines
+- Git
+
+### AI & Machine Learning
+- Large Language Models (LLMs)
+- AI Agents
+- OpenAI API
+- LangChain
+
+## Contact
+
+I'm always interested in new opportunities and collaborations. Whether you want to:
+- Discuss a potential project
+- Chat about technology
+- Collaborate on something interesting
+- Just say hello
+
+Feel free to reach out at **rishav345@gmail.com**
+
+## SEO Keywords
+
+Software Engineer, Full Stack Developer, Backend Development, Node.js Developer, Python Developer, React Developer, AI Developer, LLM Engineer, API Design, Data Integration, Machine Learning, Web Development, JavaScript, TypeScript, Next.js, Database Design, System Architecture, Cloud Computing, AWS, Docker, CI/CD, Git, PostgreSQL, MongoDB, Redis, Express.js, OpenAI, LangChain, AI Agents, Civic Technology, Music Performance
+
+---
+
+*Built with Next.js, TypeScript, and Vanilla Extract CSS*
 
 

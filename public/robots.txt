@@ -3,3 +3,9 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://rishavdacharya.dev/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
