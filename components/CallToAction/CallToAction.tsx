@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-target-blank */
+
 import * as styles from "./callToAction.css"
 
 type ICallToAction =

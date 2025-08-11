@@ -56,7 +56,6 @@ export function Talks() {
                   ) : (
                     talk.event
                   )}
-                  <Badge talk={talk} />
                 </div>
                 <p className={style.talkTitle}>{talk.title}</p>
               </div>
@@ -67,6 +66,4 @@ export function Talks() {
   )
 }
 
-const Badge = ({ talk }: { talk: Talk }) => (
-  <div className={style.badge[talk.type]}>{talk.type}</div>
-)
+

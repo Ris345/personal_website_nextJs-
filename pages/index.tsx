@@ -2,7 +2,6 @@ import { GradientBackground } from "../components/GradientBackground"
 import { CallToAction } from "../components/CallToAction"
 import { RandomQuote } from "../components/RandomQuote"
 import * as style from "../styles/home.css"
-import { Talks } from "../components/Talks"
 import { SectionTitle } from "../components/SectionTitle"
 import Image from "next/image"
 import profilePic from "../public/images/profile.jpg"
@@ -172,7 +171,7 @@ export default function Home() {
         </div>
       </section>
       
-      <section className={style.section} id="music" aria-label="Music">
+      {/* <section className={style.section} id="music" aria-label="Music">
         <div className={style.sectionInner["leftAlign"]}>
           <SectionTitle
             number="03."
@@ -202,7 +201,53 @@ export default function Home() {
             </ul>
           </article>
         </div>
-      </section>
+      </section> */}
+      <section className={style.section} id="certifications" aria-label="Certifications and Badges">
+  <div className={style.sectionInner["leftAlign"]}>
+    <SectionTitle
+      number="03."
+      title="Certifications"
+      align="left"
+      subtitle=""
+    />
+    <article>
+      <h3>Certifications</h3>
+      <ul>
+        <li>
+          <a 
+            href="https://www.credly.com/badges/36cf2c57-0ef3-4402-9911-3d2472023e20" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <strong>Datadog Certified: APM & Distributed Tracing Fundamentals</strong>
+          </a>
+        </li>
+      </ul>
+      <h3>Badges</h3>
+      <ul>
+        <li>
+          <a 
+            href="https://www.credly.com/badges/d90a1f72-47b1-4068-9103-772e2732bb37/public_url" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <strong>AWS Cloud Quest: Solutions Architect</strong>
+          </a>
+        </li>
+          <li>
+          <a 
+            href="https://www.credly.com/org/amazon-web-services/badge/aws-cloud-quest-cloud-practitioner" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <strong>AWS Cloud Quest: Cloud Practitioner</strong>
+          </a>
+        </li>
+      </ul>
+    </article>
+  </div>
+</section>
+
       
       <section className={style.section} aria-label="Contact">
         <div className={style.sectionInner["centerAlign"]}>
