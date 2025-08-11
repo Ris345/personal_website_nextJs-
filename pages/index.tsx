@@ -74,6 +74,11 @@ export default function Home() {
                   <strong>Agentic AI 5 day challenge</strong> - Hands-on workshop on building AI agents
                 </a>
               </li>
+                <li>
+                <a href="https://www.youtube.com/watch?v=kb2X3jGHz3I" target="_blank" rel="noopener noreferrer">
+                  <strong>Infrastructure, Intelligence, and Developer Velocity</strong> speeding up dev teams
+                </a>
+              </li>
             </ul>
           </div>
         </article>
