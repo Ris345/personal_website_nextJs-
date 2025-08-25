@@ -9,10 +9,12 @@ import { Footer } from "../components/Footer"
 import { Socials } from "../components/Socials"
 import { Seo } from "../components/Seo"
 import { TagManager } from "../components/TagManager"
+import  DatadogInit  from "../pages/datadog-init"
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <DatadogInit />
       <TagManager />
       <div className={style.container}>
         <Seo />
