@@ -79,6 +79,11 @@ export default function Home() {
                   <strong>Infrastructure, Intelligence, and Developer Velocity</strong> speeding up dev teams
                 </a>
               </li>
+                 <li>
+                <a href="https://www.youtube.com/watch?v=7OB51V_PIIo&t=608s" target="_blank" rel="noopener noreferrer">
+                  <strong>Pale Blue Dot Launch</strong> Autonomous Intelligence Product Release 
+                </a>
+              </li>
             </ul>
           </div>
         </article>
