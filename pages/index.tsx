@@ -80,7 +80,7 @@ export default function Home() {
                 </a>
               </li>
                  <li>
-                <a href="https://www.youtube.com/watch?v=7OB51V_PIIo&t=553s" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/watch?v=7OB51V_PIIo&t=560s" target="_blank" rel="noopener noreferrer">
                   <strong>Pale Blue Dot Launch</strong> Autonomous Intelligence Product Release 
                 </a>
               </li>
