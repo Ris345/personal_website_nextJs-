@@ -2,7 +2,7 @@
 
 ## Full Stack Software Engineer & AI Developer
 
-**Website:** https://rishavdacharya.dev  
+**Website:** https://rishavacharya.dev  
 **Email:** rishav345@gmail.com  
 **GitHub:** https://github.com/Ris345
 

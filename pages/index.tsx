@@ -5,17 +5,14 @@ import * as style from "../styles/home.css"
 import { SectionTitle } from "../components/SectionTitle"
 import Image from "next/image"
 import profilePic from "../public/images/profile.jpg"
-import by8 from "../public/images/8by8.gif";
-import randompage from "../public/images/randompage.gif";
-import SearchPage from "../public/images/SearchPage.gif"; 
 
 export default function Home() {
   return (
     <main>
       <section className={style.heroSection} aria-label="Hero">
         <div className={style.nameContainer}>
-          <h1 className={style.preText}>Hello there! I'm</h1>
-          <h2 className={style.nameText}>Rishav A.</h2>
+          <p className={style.preText}>Hello there! I'm</p>
+          <h1 className={style.nameText}>Rishav Acharya</h1>
           <RandomQuote />
           <CallToAction
             text="Discover more"
@@ -44,7 +41,7 @@ export default function Home() {
           <div className={style.imageContainer["desktop"]}>
             <Image
               src={profilePic}
-              alt="Rishav A. - Platform Engineer & DevOps Engineer specializing in AWS AI systems"
+              alt="Rishav Acharya - Platform Engineer & DevOps Engineer specializing in AWS AI systems"
               fill={true}
               className={style.profileImage}
               placeholder="blur"
@@ -99,84 +96,38 @@ export default function Home() {
           />
           
           <article>
-            <h3>8by8 Challenge</h3>
-            <p>The 8by8 Challenge is a mobile application designed to promote civic engagement through social incentives. Users can take actions like registering to vote or signing up for election reminders to earn badges. They can also invite friends via social media—and when a referred user completes an action, the inviter earns a badge too. Completing 8 badges in 8 days marks the successful completion of the challenge.</p>
-            <a href="https://challenge.8by8.us/" target="_blank" rel="noopener noreferrer">
-              <strong>Visit 8by8 Challenge</strong>
-            </a>
-            <br />
-            <br />
-            <Image src={by8} alt="8by8 Challenge application demonstration" />
-          </article>
-          
-          <br />
-          <br />
-          <br />
-          
-          <article>
-            <h3>Flybird</h3>
-            <p>Twitter API has been deprecated but this is a project of mine that I am proud to showcase. A comprehensive Twitter showcase application demonstrating advanced web development techniques.</p>  
-            <a href="https://github.com/Ris345/Twitter-Showcase-App" target="_blank" rel="noopener noreferrer">
+            <h3>LifeOS — AI Productivity Agent</h3>
+            <p>An intelligent desktop companion that helps you stay focused, break down goals, and maintain a healthy flow state. Features a Goal Strategy Engine that turns large goals into actionable weekly plans, an AI Morning Briefing that generates personalized daily plans, and a Flow State Guard that detects distractions and nudges you back to focus—backed by real-time usage analytics.</p>
+            <p>Built with a Tauri (Rust) desktop shell, React/TypeScript/TailwindCSS frontend, and a Python FastAPI backend with OpenAI GPT-4o for the AI layer.</p>
+            <a href="https://github.com/Ris345/LifeOS-Productivity-AI-Agent" target="_blank" rel="noopener noreferrer">
               <strong>View Repository</strong>
             </a>
-            <br />
-            <br />
-            <Image src={SearchPage} alt="Flybird search page interface" width={500} />
-            <br />
-            <br />
-            <Image src={randompage} alt="Flybird random page interface" width={500} />
           </article>
-          
+
           <br />
           <br />
           <br />
-          
+
           <article>
-            <h3>MCP Excel Sheet Automator</h3>
-            <p>A recent project demonstrating my technical implementation and development skills involved integrating an MCP workflow using Claude to automate data processing between Excel and Google Sheets.</p>
-            <a href="https://github.com/Ris345/tinyMCP" target="_blank" rel="noopener noreferrer">
+            <h3>Post Automator</h3>
+            <p>A serverless automation that posts to LinkedIn every Sunday, generating the content with OpenAI's GPT-4o-mini and publishing it unattended on a schedule.</p>
+            <p>Runs as a containerized Python 3.12 Lambda triggered by EventBridge Scheduler, built and pushed via ECR, with all infrastructure defined in Terraform.</p>
+            <a href="https://github.com/Ris345/post-automator" target="_blank" rel="noopener noreferrer">
               <strong>View Repository</strong>
             </a>
-            <br />
-            <br />
-            <div style={{ position: 'relative', width: '100%', maxWidth: '500px', cursor: 'pointer' }}>
-              <div 
-                style={{
-                  width: '100%',
-                  height: '315px',
-                  backgroundColor: '#000',
-                  borderRadius: '8px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  backgroundImage: 'url(https://img.youtube.com/vi/akop7MsIUa0/maxresdefault.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  position: 'relative'
-                }}
-                onClick={() => window.open('https://www.youtube.com/watch?v=akop7MsIUa0&t=64s', '_blank')}
-              >
-                <div style={{
-                  width: '80px',
-                  height: '80px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'transform 0.2s ease'
-                }}>
-                  <div style={{
-                    width: 0,
-                    height: 0,
-                    borderLeft: '20px solid #000',
-                    borderTop: '12px solid transparent',
-                    borderBottom: '12px solid transparent',
-                    marginLeft: '4px'
-                  }}></div>
-                </div>
-              </div>
-            </div>
+          </article>
+
+          <br />
+          <br />
+          <br />
+
+          <article>
+            <h3>Grandma's Pill Buddy</h3>
+            <p>An AI voice agent that calls elderly patients daily to check medication adherence and wellbeing, built for the ABI Hackathon. Claude drives the conversation, ElevenLabs handles voice synthesis, and Twilio places the call and texts a caregiver if a dose was missed. A judge agent evaluates every call afterward and feeds the learnings into the next conversation's prompt, making the agent self-improving over time.</p>
+            <p>Three FastAPI services (voice agent, backend, judge agent) running over Docker Compose, with Supabase for patient data and call logs.</p>
+            <a href="https://github.com/Ris345/voice-hack" target="_blank" rel="noopener noreferrer">
+              <strong>View Repository</strong>
+            </a>
           </article>
         </div>
       </section>

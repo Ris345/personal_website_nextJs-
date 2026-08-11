@@ -6,14 +6,14 @@
 1. Go to [analytics.google.com](https://analytics.google.com)
 2. Click "Start measuring"
 3. Create account: "Rishav Acharya Personal"
-4. Create property: "rishavdacharya.dev"
+4. Create property: "rishavacharya.dev"
 5. Choose industry: "Technology"
 6. Select business size: "Small business"
 
 ### 2. Get Tracking Code
 1. Go to Admin → Data Streams
 2. Add stream → Web
-3. Website URL: `https://rishavdacharya.dev`
+3. Website URL: `https://rishavacharya.dev`
 4. Stream name: "Rishav Acharya Website"
 5. Copy the Measurement ID (G-XXXXXXXXXX)
 
@@ -61,12 +61,12 @@ export default function Document() {
 
 ### 1. Add Property
 1. Go to [search.google.com/search-console](https://search.google.com/search-console)
-2. Add property: `https://rishavdacharya.dev`
+2. Add property: `https://rishavacharya.dev`
 3. Verify ownership (DNS record or HTML tag)
 
 ### 2. Submit Sitemap
 1. Go to Sitemaps section
-2. Add sitemap: `https://rishavdacharya.dev/sitemap.xml`
+2. Add sitemap: `https://rishavacharya.dev/sitemap.xml`
 3. Submit for indexing
 
 ### 3. Monitor Performance
