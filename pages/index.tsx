@@ -29,19 +29,25 @@ export default function Home() {
           <article>
             <SectionTitle number="00." title="About" align="left" />
   <p>
-    I'm a <strong>Backend Engineer</strong> focused on <strong>infrastructure</strong> and <strong>AI workloads</strong>, working primarily with <strong>Python</strong>, <strong>Node.js</strong>, <strong>Docker</strong>, <strong>AWS</strong>, <strong>PostgreSQL</strong>, and <strong>Supabase</strong>. I enjoy operating at the intersection of development and production—building robust APIs while ensuring systems are <strong>observable</strong>, <strong>deployable</strong>, and <strong>resilient</strong> in real-world environments.
+    My journey started in full-stack development, but I got hooked on <strong>infrastructure</strong> when I realized I cared more about keeping systems running than building new features. <strong>Chaos engineering</strong> principles pulled me in—I wanted to understand how to build resilient systems. That led me deep into <strong>observability</strong>: metrics, traces, APM, the whole stack.
   </p>
   <p>
-    I’m skilled in setting up <strong>CI/CD pipelines</strong>, containerizing apps, automating workflows, and managing cloud infrastructure to support fast, reliable deployments.
+    At Anote, I learned <strong>AWS</strong> best practices the hard way: keeping systems reliable while making sure the bills didn't skyrocket. I also learned how <strong>microservices</strong> kept costs down and made deployments easier.
   </p>
   <p>
-    I bring value to businesses by building backend systems that are not just functional but <strong>production-ready</strong>—reducing downtime, accelerating developer velocity, and ensuring infrastructure can scale with product needs. My focus on both code quality and system reliability allows teams to ship confidently and grow sustainably.
+    Today I'm a <strong>Software Engineer II</strong> at <strong>Tessitura Network</strong>. I'm driven to work in mission-driven spaces. But honestly, I just love what I do: managing infrastructure, helping developers ship code to production, solving the problems that keep systems alive.
+  </p>
+  <p>
+    I'm looking to connect with founders building the <strong>infrastructure layer of AI</strong>.
+  </p>
+  <p>
+    When I'm not debugging or closing tickets, you'll find me rock climbing, playing music, or tinkering with robotics.
   </p>
           </article>
           <div className={style.imageContainer["desktop"]}>
             <Image
               src={profilePic}
-              alt="Rishav Acharya - Platform Engineer & DevOps Engineer specializing in AWS AI systems"
+              alt="Rishav Acharya - Software Engineer specializing in infrastructure and observability"
               fill={true}
               className={style.profileImage}
               placeholder="blur"
