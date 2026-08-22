@@ -1,78 +1,146 @@
 import { DefaultSeo } from "next-seo"
 import Head from "next/head"
 
+const SITE_URL = "https://rishavacharya.dev/"
+const OG_IMAGE = "https://rishavacharya.dev/images/og-image.jpg"
+
+const TITLE =
+  "Rishav Acharya | Software Engineer — Infrastructure & Observability"
+const DESCRIPTION =
+  "Rishav Acharya is a Software Engineer II at Tessitura Network focused on infrastructure, observability, and chaos engineering. Experienced with AWS, Docker, CI/CD, and Datadog APM, building resilient systems that keep production reliable."
+
+// Search engines ignore meta keywords, and a 30-term list reads as stuffing to
+// the crawlers that still look. Kept short and true to the page's actual copy.
+const KEYWORDS =
+  "Rishav Acharya, software engineer, infrastructure engineer, observability, chaos engineering, AWS, Datadog APM, site reliability engineering"
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}#person`,
+      name: "Rishav Acharya",
+      alternateName: "Rishav A.",
+      jobTitle: "Software Engineer II",
+      url: SITE_URL,
+      image: OG_IMAGE,
+      email: "mailto:rishav345@gmail.com",
+      // sameAs is for profile URLs only — a mailto here is invalid.
+      sameAs: [
+        "https://github.com/Ris345",
+        "https://www.linkedin.com/in/rishav-a-0482051a7/",
+        "https://x.com/345Rishav",
+        "https://medium.com/@rishavacharya_345",
+      ],
+      description: DESCRIPTION,
+      worksFor: {
+        "@type": "Organization",
+        name: "Tessitura Network",
+        url: "https://www.tessituranetwork.com/",
+      },
+      hasOccupation: {
+        "@type": "Occupation",
+        name: "Software Engineer",
+        occupationalCategory: "15-1252.00",
+        skills:
+          "Infrastructure engineering, observability, chaos engineering, AWS, Docker, Kubernetes, CI/CD, Datadog APM, distributed tracing",
+      },
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "Datadog Certified: APM & Distributed Tracing Fundamentals",
+          credentialCategory: "certificate",
+          url: "https://www.credly.com/badges/36cf2c57-0ef3-4402-9911-3d2472023e20",
+          recognizedBy: { "@type": "Organization", name: "Datadog" },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "AWS Cloud Quest: Solutions Architect",
+          credentialCategory: "badge",
+          url: "https://www.credly.com/badges/d90a1f72-47b1-4068-9103-772e2732bb37/public_url",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Amazon Web Services",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "AWS Cloud Quest: Cloud Practitioner",
+          credentialCategory: "badge",
+          url: "https://www.credly.com/org/amazon-web-services/badge/aws-cloud-quest-cloud-practitioner",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Amazon Web Services",
+          },
+        },
+      ],
+      knowsAbout: [
+        "Infrastructure Engineering",
+        "Platform Engineering",
+        "Site Reliability Engineering",
+        "Observability",
+        "Chaos Engineering",
+        "APM & Distributed Tracing",
+        "Amazon Web Services",
+        "Docker",
+        "Kubernetes",
+        "Microservices",
+        "CI/CD",
+        "AI Infrastructure",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}#website`,
+      url: SITE_URL,
+      name: "Rishav Acharya",
+      description: DESCRIPTION,
+      inLanguage: "en-US",
+      publisher: { "@id": `${SITE_URL}#person` },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}#webpage`,
+      url: SITE_URL,
+      name: TITLE,
+      description: DESCRIPTION,
+      isPartOf: { "@id": `${SITE_URL}#website` },
+      about: { "@id": `${SITE_URL}#person` },
+      mainEntity: { "@id": `${SITE_URL}#person` },
+      primaryImageOfPage: { "@type": "ImageObject", url: OG_IMAGE },
+      inLanguage: "en-US",
+    },
+  ],
+}
+
 export function Seo() {
   return (
     <>
       <Head>
-        <meta name="keywords" content="Rishav Acharya, Software Engineer, Infrastructure Engineer, Platform Engineer, DevOps Engineer, Site Reliability Engineer, SRE, Observability, Chaos Engineering, APM, Distributed Tracing, Datadog, CloudWatch, AWS, AWS ECS, AWS Lambda, AWS S3, RDS PostgreSQL, CloudFront, AWS SQS, AWS SES, Docker, Kubernetes, Microservices, Prometheus, Grafana, AWS Step Functions, EventBridge, DynamoDB, Node.js, Python, React, CI/CD, AI Infrastructure, Tessitura Network" />
+        <meta name="keywords" content={KEYWORDS} />
         <meta name="author" content="Rishav Acharya" />
-        <meta name="robots" content="index, follow" />
-        <meta name="language" content="English" />
-        <meta name="revisit-after" content="7 days" />
+        {/* robots lives on DefaultSeo (robotsProps) — a second robots meta here
+            would collide with the one next-seo emits. */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
 
         {/* Schema.org structured data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Rishav Acharya",
-              "alternateName": "Rishav A.",
-              "jobTitle": "Software Engineer II",
-              "url": "https://rishavacharya.dev",
-              "image": "https://rishavacharya.dev/images/og-image.jpg",
-              "sameAs": [
-                "https://github.com/Ris345",
-                "https://www.linkedin.com/in/rishav-a-0482051a7/",
-                "https://x.com/345Rishav",
-                "https://medium.com/@rishavacharya_345",
-                "mailto:rishav345@gmail.com"
-              ],
-              "description": "Software Engineer II at Tessitura Network focused on infrastructure, observability, and chaos engineering. Experienced with AWS, Docker, CI/CD, Datadog APM, and building resilient, production-ready systems.",
-              "knowsAbout": [
-                "Infrastructure Engineering",
-                "Platform Engineering",
-                "DevOps Engineering",
-                "Site Reliability Engineering",
-                "Observability",
-                "Chaos Engineering",
-                "APM & Distributed Tracing",
-                "AWS ECS",
-                "AWS Lambda",
-                "AWS S3",
-                "Datadog Monitoring",
-                "CloudWatch",
-                "RDS PostgreSQL",
-                "CloudFront CDN",
-                "AWS SQS",
-                "AWS SES",
-                "Docker",
-                "Kubernetes",
-                "Microservices",
-                "Prometheus",
-                "Grafana",
-                "AWS Step Functions",
-                "EventBridge",
-                "DynamoDB",
-                "CI/CD",
-                "AI Infrastructure"
-              ],
-              "worksFor": {
-                "@type": "Organization",
-                "name": "Tessitura Network"
-              }
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </Head>
       <DefaultSeo
-        title="Rishav Acharya | Software Engineer — Infrastructure & Observability"
-        description="Rishav Acharya is a Software Engineer II at Tessitura Network focused on infrastructure, observability, and chaos engineering. Experienced with AWS, Docker, CI/CD, and Datadog APM, building resilient systems that keep production reliable."
-        canonical="https://rishavacharya.dev"
+        title={TITLE}
+        description={DESCRIPTION}
+        canonical={SITE_URL}
+        // Lets Google show a full-size image and an unclipped snippet.
+        robotsProps={{
+          maxImagePreview: "large",
+          maxSnippet: -1,
+          maxVideoPreview: -1,
+        }}
         additionalMetaTags={[
           {
             name: "twitter:card",
@@ -88,16 +156,20 @@ export function Seo() {
           },
         ]}
         openGraph={{
-          type: "website",
+          type: "profile",
           locale: "en_US",
-          url: "https://rishavacharya.dev",
+          url: SITE_URL,
           site_name: "Rishav Acharya | Software Engineer",
-          title: "Rishav Acharya | Software Engineer — Infrastructure & Observability",
-          description:
-            "Rishav Acharya is a Software Engineer II at Tessitura Network focused on infrastructure, observability, and chaos engineering. Experienced with AWS, Docker, CI/CD, and Datadog APM, building resilient systems that keep production reliable.",
+          title: TITLE,
+          description: DESCRIPTION,
+          profile: {
+            firstName: "Rishav",
+            lastName: "Acharya",
+            username: "345Rishav",
+          },
           images: [
             {
-              url: "https://rishavacharya.dev/images/og-image.jpg",
+              url: OG_IMAGE,
               alt: "Rishav Acharya - Software Engineer specializing in infrastructure and observability",
               width: 1200,
               height: 630,

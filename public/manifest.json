@@ -3,6 +3,7 @@
   "short_name": "Rishav Acharya",
   "description": "Software Engineer II at Tessitura Network focused on infrastructure, observability, and chaos engineering",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
@@ -11,6 +12,18 @@
       "src": "/favicon.ico",
       "sizes": "16x16 32x32",
       "type": "image/x-icon"
+    },
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
-} 
+}

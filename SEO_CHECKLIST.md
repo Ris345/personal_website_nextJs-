@@ -1,133 +1,80 @@
-# SEO Optimization Checklist for Rishav Acharya's Website
+# SEO Checklist — rishavacharya.dev
 
-## ✅ Completed Optimizations
+Positioning: **Software Engineer II at Tessitura Network, infrastructure & observability.**
+Keep this file in sync with `components/Seo/Seo.tsx` — that component is the source of truth.
 
-### Meta Tags & Headers
-- [x] **Title Tag**: "Rishav Acharya | Full Stack Software Engineer & AI Developer"
-- [x] **Meta Description**: Comprehensive description with keywords
-- [x] **Meta Keywords**: Relevant technical keywords
-- [x] **Author Tag**: Rishav Acharya
-- [x] **Robots Tag**: index, follow
-- [x] **Language Tag**: English
-- [x] **Viewport Tag**: Mobile responsive
+## ✅ In place
 
-### Open Graph & Social Media
-- [x] **Open Graph Title**: Optimized for social sharing
-- [x] **Open Graph Description**: Engaging social media description
-- [x] **Open Graph Image**: Profile image with proper dimensions
-- [x] **Twitter Card**: Large image format
-- [x] **Twitter Site**: @rishavacharya
-- [x] **Twitter Creator**: @rishavacharya
+### Meta & indexing
+- [x] Title: "Rishav Acharya | Software Engineer — Infrastructure & Observability"
+- [x] Meta description matching the About copy
+- [x] Canonical `https://rishavacharya.dev/` — trailing slash matches the sitemap `<loc>`
+- [x] `robots`: `index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1`
+      (set via next-seo `robotsProps`, not a hand-written meta — a second `robots`
+      tag collides with the one next-seo emits)
+- [x] Keywords trimmed to 8 terms that appear in the page copy
+- [x] `robots.txt` valid (no stray leading line) and points at the sitemap
+- [x] `sitemap.xml` generated at build time by `scripts/generate-sitemap.js`,
+      `lastmod` derived from the last commit
 
-### Structured Data (Schema.org)
-- [x] **Person Schema**: Complete professional profile
-- [x] **Job Title**: Full Stack Software Engineer
-- [x] **Skills & Expertise**: Technical skills listed
-- [x] **Social Profiles**: GitHub, email links
-- [x] **Organization**: Freelance/Independent
+### Social
+- [x] `og:type: profile` with `profile:first_name` / `last_name` / `username`
+- [x] OG image 1200×630 with alt text
+- [x] Twitter `summary_large_image`, `@345Rishav` (site + creator)
 
-### Technical SEO
-- [x] **Sitemap.xml**: All pages included with priorities
-- [x] **Robots.txt**: Properly formatted with sitemap reference
-- [x] **Canonical URLs**: Proper canonical tags
-- [x] **Security Headers**: XSS protection, content type options
-- [x] **Image Optimization**: WebP/AVIF formats, proper alt tags
-- [x] **Performance**: Compression enabled, powered by header removed
+### Structured data
+- [x] `@graph` with `Person` + `WebSite` + `ProfilePage`, cross-linked by `@id`
+- [x] `email` as its own property (not stuffed into `sameAs`, which takes profile URLs only)
+- [x] `hasCredential` for the Datadog APM cert and both AWS Cloud Quest badges
+- [x] `hasOccupation` with O*NET code 15-1252.00
 
-### Content Structure
-- [x] **Semantic HTML**: Proper use of main, article, section tags
-- [x] **Heading Hierarchy**: H1, H2, H3 properly structured
-- [x] **Alt Text**: Descriptive alt text for all images
-- [x] **Internal Linking**: Proper anchor links
-- [x] **External Links**: noopener noreferrer attributes
+### Technical / Core Web Vitals
+- [x] `font-display: swap` on all five `@font-face` rules
+- [x] `sizes` on the `fill` hero image — without it the browser preloads the
+      3840w candidate for a ≤300px box
+- [x] Single `<main>` per document (`_app.tsx` owns it; pages must not add another)
+- [x] One `<h1>`, sections use `<h2>` via `SectionTitle`, projects use `<h3>`
+- [x] Web manifest linked from `_document.tsx` with 192px + 512px PNG icons
+- [x] `apple-touch-icon`
+- [x] `preconnect` + `dns-prefetch` to googletagmanager
+- [x] Security headers + CSP in `next.config.js`
+- [x] Compression on, `x-powered-by` off, WebP/AVIF enabled
 
-### Content Optimization
-- [x] **Keyword Integration**: Natural keyword placement
-- [x] **Content Depth**: Comprehensive project descriptions
-- [x] **Technical Details**: Specific technologies mentioned
-- [x] **Professional Focus**: Clear value proposition
+## 🔧 Open items
 
-## 🚀 Additional Recommendations
+### Needs an account, not a code change
+- [ ] Verify the property in **Google Search Console** and submit the sitemap
+- [ ] Same for **Bing Webmaster Tools**
+- [ ] Confirm GA4 is receiving events through GTM container `GTM-TCGRVK9`
+- [ ] Run PageSpeed Insights against production and record the field CWV numbers
 
-### Content Marketing
-- [ ] **Blog Section**: Add technical blog posts
-- [ ] **Case Studies**: Detailed project case studies
-- [ ] **Tutorial Content**: Share knowledge and expertise
-- [ ] **Industry Insights**: AI/ML trends and analysis
+### Repo hygiene
+- [ ] `public/images/` carries ~18 MB of unreferenced assets
+      (`8by8.gif`, `randompage.gif`, `SearchPage.gif`, `aws0.jpg`, `logo.png`).
+      They are never served, so they cost deploy size rather than page speed —
+      delete if the case-study sections that used them are not coming back.
+- [ ] `profile.jpg` is a 2.2 MB source. `next/image` downsizes it on delivery,
+      so this is build cost only, but a 1000px source would do.
 
-### Technical Improvements
-- [ ] **Core Web Vitals**: Optimize for LCP, FID, CLS
-- [ ] **Mobile Optimization**: Ensure perfect mobile experience
-- [ ] **Page Speed**: Target <3 second load times
-- [ ] **CDN**: Implement content delivery network
+### Content — the real lever
+The site is a single page with no crawlable depth beyond it. Rankings for
+anything other than the name query need more indexable content:
+- [ ] Write-ups on the observability/chaos engineering work (own URLs, not anchors)
+- [ ] Project case studies with actual numbers
+- [ ] Talks as individual pages so they can rank on their own titles
 
-### Link Building
-- [ ] **Guest Posts**: Write for tech blogs
-- [ ] **Speaking Engagements**: More conference talks
-- [ ] **Open Source**: Contribute to popular projects
-- [ ] **Industry Forums**: Participate in tech discussions
+## 🎯 Target keywords
 
-### Local SEO (if applicable)
-- [ ] **Google My Business**: Create business profile
-- [ ] **Local Citations**: Consistent NAP across directories
-- [ ] **Local Keywords**: City/region specific terms
+**Name (primary):** "Rishav Acharya", "Rishav Acharya engineer", "Rishav Acharya Tessitura"
 
-### Analytics & Monitoring
-- [ ] **Google Analytics**: Track user behavior
-- [ ] **Google Search Console**: Monitor search performance
-- [ ] **Keyword Tracking**: Monitor ranking positions
-- [ ] **Competitor Analysis**: Track competitor keywords
+**Topical:** infrastructure engineer, observability engineer, chaos engineering,
+Datadog APM, distributed tracing, site reliability engineer, AI infrastructure
 
-## 📊 Target Keywords
+Realistically the name query is winnable now; topical terms are not without the
+content work above.
 
-### Primary Keywords
-- "Full Stack Software Engineer"
-- "Node.js Developer"
-- "Python Developer"
-- "AI Developer"
-- "React Developer"
+## 🔄 Maintenance
 
-### Long-tail Keywords
-- "Full Stack Software Engineer AI LLM"
-- "Node.js Python React Developer"
-- "Backend Development Data Integration"
-- "AI Agent Development Expert"
-- "Software Engineer Civic Technology"
-
-### Location-based (if applicable)
-- "Software Engineer [City]"
-- "Full Stack Developer [Region]"
-- "AI Developer [Location]"
-
-## 🎯 Ranking Goals
-
-### Short-term (3 months)
-- Top 10 for "Rishav Acharya"
-- Top 50 for "Full Stack Software Engineer"
-- Top 100 for "Node.js Developer"
-
-### Medium-term (6 months)
-- Top 5 for "Rishav Acharya"
-- Top 20 for "Full Stack Software Engineer"
-- Top 30 for "AI Developer"
-
-### Long-term (12 months)
-- #1 for "Rishav Acharya"
-- Top 10 for "Full Stack Software Engineer"
-- Top 15 for "AI Developer"
-
-## 📈 Success Metrics
-
-- **Organic Traffic**: 50% increase in 6 months
-- **Search Rankings**: Top 10 for target keywords
-- **Click-through Rate**: >3% for search results
-- **Bounce Rate**: <40%
-- **Time on Site**: >2 minutes average
-- **Conversion Rate**: >5% contact form submissions
-
-## 🔄 Regular Maintenance
-
-- [ ] **Monthly**: Update content and projects
-- [ ] **Quarterly**: Review and update keywords
-- [ ] **Semi-annually**: Technical SEO audit
-- [ ] **Annually**: Complete SEO strategy review 
+- Anything touching title/description/schema → update `components/Seo/Seo.tsx`, then this file
+- Adding a route → add it to `routes` in `scripts/generate-sitemap.js`
+- Re-validate schema after edits: https://validator.schema.org/

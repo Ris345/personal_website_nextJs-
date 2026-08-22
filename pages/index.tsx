@@ -8,7 +8,7 @@ import profilePic from "../public/images/profile.jpg"
 
 export default function Home() {
   return (
-    <main>
+    <>
       <section className={style.heroSection} aria-label="Hero">
         <div className={style.nameContainer}>
           <p className={style.preText}>Hello there! I'm</p>
@@ -49,6 +49,9 @@ export default function Home() {
               src={profilePic}
               alt="Rishav Acharya - Software Engineer specializing in infrastructure and observability"
               fill={true}
+              // Without sizes, `fill` requests the widest srcset candidate (3840w)
+              // for a box that is never wider than 300px.
+              sizes="(max-width: 768px) 300px, 270px"
               className={style.profileImage}
               placeholder="blur"
               priority
@@ -245,6 +248,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   )
 }
