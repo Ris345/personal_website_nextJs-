@@ -5,12 +5,13 @@ export function Seo() {
   return (
     <>
       <Head>
-        <meta name="keywords" content="Rishav Acharya, Platform Engineer, DevOps Engineer, AWS AI Specialist, AI System Architect, Production AI Engineer, LLM Integration Expert, AWS ECS, AWS Lambda, AWS S3, Datadog, CloudWatch, RDS PostgreSQL, CloudFront, AWS SQS, AWS SES, Docker, Kubernetes, Prometheus, Grafana, AWS Step Functions, EventBridge, DynamoDB, Node.js, Python, React, CI/CD, AI Infrastructure, AI Pipeline, AI Monitoring" />
+        <meta name="keywords" content="Rishav Acharya, Software Engineer, Infrastructure Engineer, Platform Engineer, DevOps Engineer, Site Reliability Engineer, SRE, Observability, Chaos Engineering, APM, Distributed Tracing, Datadog, CloudWatch, AWS, AWS ECS, AWS Lambda, AWS S3, RDS PostgreSQL, CloudFront, AWS SQS, AWS SES, Docker, Kubernetes, Microservices, Prometheus, Grafana, AWS Step Functions, EventBridge, DynamoDB, Node.js, Python, React, CI/CD, AI Infrastructure, Tessitura Network" />
         <meta name="author" content="Rishav Acharya" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
         <meta name="revisit-after" content="7 days" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
 
         {/* Schema.org structured data */}
         <script
@@ -21,7 +22,7 @@ export function Seo() {
               "@type": "Person",
               "name": "Rishav Acharya",
               "alternateName": "Rishav A.",
-              "jobTitle": "Platform Engineer & DevOps Engineer",
+              "jobTitle": "Software Engineer II",
               "url": "https://rishavacharya.dev",
               "image": "https://rishavacharya.dev/images/og-image.jpg",
               "sameAs": [
@@ -31,10 +32,15 @@ export function Seo() {
                 "https://medium.com/@rishavacharya_345",
                 "mailto:rishav345@gmail.com"
               ],
-              "description": "Platform Engineer and DevOps Engineer specializing in building production-ready AI systems on AWS. Expert in ECS, Lambda, S3, Datadog monitoring, and scalable AI infrastructure.",
+              "description": "Software Engineer II at Tessitura Network focused on infrastructure, observability, and chaos engineering. Experienced with AWS, Docker, CI/CD, Datadog APM, and building resilient, production-ready systems.",
               "knowsAbout": [
+                "Infrastructure Engineering",
                 "Platform Engineering",
                 "DevOps Engineering",
+                "Site Reliability Engineering",
+                "Observability",
+                "Chaos Engineering",
+                "APM & Distributed Tracing",
                 "AWS ECS",
                 "AWS Lambda",
                 "AWS S3",
@@ -46,26 +52,26 @@ export function Seo() {
                 "AWS SES",
                 "Docker",
                 "Kubernetes",
+                "Microservices",
                 "Prometheus",
                 "Grafana",
                 "AWS Step Functions",
                 "EventBridge",
                 "DynamoDB",
-                "AI Infrastructure",
-                "AI Pipeline Architecture",
-                "Production AI Systems"
+                "CI/CD",
+                "AI Infrastructure"
               ],
               "worksFor": {
                 "@type": "Organization",
-                "name": "Freelance/Independent"
+                "name": "Tessitura Network"
               }
             })
           }}
         />
       </Head>
       <DefaultSeo
-        title="Rishav Acharya | Platform Engineer & DevOps Engineer - AWS AI Specialist"
-        description="Rishav Acharya is a Platform Engineer and DevOps Engineer specializing in building production-ready AI systems on AWS. Expert in ECS, Lambda, S3, Datadog monitoring, and scalable AI infrastructure that handles real user traffic."
+        title="Rishav Acharya | Software Engineer — Infrastructure & Observability"
+        description="Rishav Acharya is a Software Engineer II at Tessitura Network focused on infrastructure, observability, and chaos engineering. Experienced with AWS, Docker, CI/CD, and Datadog APM, building resilient systems that keep production reliable."
         canonical="https://rishavacharya.dev"
         additionalMetaTags={[
           {
@@ -85,14 +91,14 @@ export function Seo() {
           type: "website",
           locale: "en_US",
           url: "https://rishavacharya.dev",
-          site_name: "Rishav Acharya | Platform Engineer",
-          title: "Rishav Acharya | Platform Engineer & DevOps Engineer - AWS AI Specialist",
+          site_name: "Rishav Acharya | Software Engineer",
+          title: "Rishav Acharya | Software Engineer — Infrastructure & Observability",
           description:
-            "Rishav Acharya is a Platform Engineer and DevOps Engineer specializing in building production-ready AI systems on AWS. Expert in ECS, Lambda, S3, Datadog monitoring, and scalable AI infrastructure that handles real user traffic.",
+            "Rishav Acharya is a Software Engineer II at Tessitura Network focused on infrastructure, observability, and chaos engineering. Experienced with AWS, Docker, CI/CD, and Datadog APM, building resilient systems that keep production reliable.",
           images: [
             {
               url: "https://rishavacharya.dev/images/og-image.jpg",
-              alt: "Rishav Acharya - Platform Engineer & DevOps Engineer specializing in AWS AI systems",
+              alt: "Rishav Acharya - Software Engineer specializing in infrastructure and observability",
               width: 1200,
               height: 630,
               type: "image/jpeg",
