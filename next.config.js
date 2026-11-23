@@ -64,7 +64,9 @@ const nextConfig = {
             value: [
               "default-src 'self'",
               // GTM/GA inject inline snippets; Next.js hydration also emits inline scripts.
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+              // 'unsafe-eval' is dev-only: Fast Refresh's webpack runtime uses eval() to
+              // apply hot updates, which a strict script-src otherwise blocks (blank page).
+              `script-src 'self' 'unsafe-inline'${isProd ? '' : " 'unsafe-eval'"} https://www.googletagmanager.com https://www.google-analytics.com`,
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https://www.googletagmanager.com https://www.google-analytics.com https://*.cloudfront.net",
               "font-src 'self' data:",
