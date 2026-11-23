@@ -28,7 +28,7 @@ export const board = style({
   bottom: 0,
   height: "11px",
   borderRadius: "3px",
-  background: `linear-gradient(180deg, ${theme.colors.primary} 0%, #5a2a20 55%, #2a0b06 100%)`,
+  background: "linear-gradient(180deg, #6d3a30 0%, #46190f 55%, #240905 100%)",
   boxShadow: "rgba(0, 0, 0, 0.55) 0px 10px 18px -6px",
 })
 
@@ -52,42 +52,46 @@ const baseSpine = style({
       position: "absolute",
       inset: 0,
       borderRadius: "inherit",
-      boxShadow: `inset 0 0 0 1px rgba(0,0,0,0.35), inset 0 14px 0 -11px rgba(255,255,255,0.35), inset 0 -14px 0 -11px rgba(255,255,255,0.35)`,
+      boxShadow: `inset 0 0 0 1px rgba(0,0,0,0.35), inset 0 14px 0 -11px rgba(255,255,255,0.22), inset 0 -14px 0 -11px rgba(255,255,255,0.22)`,
       pointerEvents: "none",
     },
     "&:hover, &:focus-visible": {
       // Pulled part-way off the shelf.
       transform: "rotate(180deg) translateY(-10px)",
       boxShadow: "rgba(0, 0, 0, 0.6) 0px 16px 24px -10px",
-      filter: "brightness(1.12)",
+      filter: "brightness(1.08)",
     },
   },
 })
 
-/** Cover colors, cycled by index. */
+/**
+ * Cover colors, cycled by index. Kept inside the site's warm palette — tints
+ * and shades of the brown background and clay primary — so the shelf sits in
+ * the page rather than shouting over it.
+ */
 export const spine = styleVariants({
   clay: [
     baseSpine,
     {
-      background: `linear-gradient(90deg, #8d4f46 0%, ${theme.colors.primary} 45%, #7a4138 100%)`,
+      background: `linear-gradient(90deg, #7a4138 0%, ${theme.colors.primary} 45%, #6d3a32 100%)`,
     },
   ],
-  ink: [
+  cocoa: [
     baseSpine,
     {
-      background: `linear-gradient(90deg, #1f3d63 0%, ${theme.colors.blue} 48%, #24456e 100%)`,
+      background: "linear-gradient(90deg, #3d140d 0%, #5e2a20 48%, #40160f 100%)",
     },
   ],
-  ember: [
+  rust: [
     baseSpine,
     {
-      background: `linear-gradient(90deg, #a83f1c 0%, ${theme.colors.red} 46%, #92371a 100%)`,
+      background: "linear-gradient(90deg, #7f3a22 0%, #9c4f2e 46%, #733420 100%)",
     },
   ],
-  bone: [
+  taupe: [
     baseSpine,
     {
-      background: `linear-gradient(90deg, #b8a49a 0%, #e6d3d0 48%, #a8928a 100%)`,
+      background: "linear-gradient(90deg, #8f7a72 0%, #b09a92 48%, #86716a 100%)",
     },
   ],
 })

@@ -1,11 +1,11 @@
 import * as style from "./bookshelf.css"
 import type { Book } from "../../data/books"
 
-const COVERS = ["clay", "ink", "ember", "bone"] as const
+const COVERS = ["clay", "cocoa", "rust", "taupe"] as const
 const SIZES = ["tall", "mid", "short", "slim"] as const
 
-/** The bone cover is light, so its lettering has to flip to dark. */
-const isLightCover = (cover: (typeof COVERS)[number]) => cover === "bone"
+/** The taupe cover is light, so its lettering has to flip to dark. */
+const isLightCover = (cover: (typeof COVERS)[number]) => cover === "taupe"
 
 /** "Title: subtitle" -> "Title". A spine only has room for the main title. */
 function shortTitle(title: string): string {
