@@ -10,7 +10,7 @@ const { publishedPosts, escapeXml } = require("./posts")
 const SITE_URL = "https://rishavacharya.dev"
 const TITLE = "Rishav Acharya — Blog"
 const DESCRIPTION =
-  "Writing on infrastructure, observability, chaos engineering, and the AI infrastructure layer."
+  "Rishav Acharya on infrastructure, AI, and the conferences that leave an impact."
 
 /** RFC 822, the date format RSS 2.0 requires. */
 function rfc822(iso) {

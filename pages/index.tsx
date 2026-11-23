@@ -245,6 +245,10 @@ export default function Home({ posts }: HomeProps) {
             subtitle=""
           />
           <article style={{ width: "100%" }}>
+            <p className={blogStyle.intro}>
+              I write about infrastructure, AI, and the conferences that have
+              left an impact on me.
+            </p>
             {posts.length === 0 ? (
               <p className={blogStyle.empty}>Coming soon</p>
             ) : (

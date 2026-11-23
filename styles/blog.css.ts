@@ -13,6 +13,12 @@ export const page = style({
   },
 })
 
+export const intro = style({
+  maxWidth: "650px",
+  lineHeight: theme.lineHeight.medium,
+  marginBottom: theme.space.extraLarge,
+})
+
 export const postList = style({
   listStyle: "none",
   margin: 0,

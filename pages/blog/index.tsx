@@ -10,7 +10,7 @@ import { getAllPostMeta, type PostMeta } from "../../lib/posts"
 const SITE_URL = "https://rishavacharya.dev"
 const TITLE = "Blog | Rishav Acharya"
 const DESCRIPTION =
-  "Writing on infrastructure, observability, chaos engineering, and the AI infrastructure layer by Rishav Acharya."
+  "Rishav Acharya on infrastructure, AI, and the conferences that leave an impact."
 
 interface BlogIndexProps {
   posts: PostMeta[]
@@ -32,6 +32,10 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
       />
       <div className={style.page}>
         <SectionTitle number="04." title="Blog" align="left" />
+        <p className={style.intro}>
+          I write about infrastructure, AI, and the conferences that have left
+          an impact on me.
+        </p>
 
         {posts.length === 0 ? (
           <p className={style.empty}>Coming soon</p>
