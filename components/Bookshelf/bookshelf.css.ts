@@ -149,43 +149,6 @@ export const author = styleVariants({
   ],
 })
 
-/** Shown under the shelf: full titles, since a spine can only hold so much. */
-export const legend = style({
-  listStyle: "none",
-  margin: `${theme.space.extraLarge} 0 0`,
-  padding: 0,
-  display: "flex",
-  flexDirection: "column",
-  gap: theme.space.medium,
-  fontSize: theme.fontSize.extraSmall,
-  lineHeight: theme.lineHeight.small,
-})
-
-export const legendItem = style({
-  display: "flex",
-  flexWrap: "wrap",
-  alignItems: "baseline",
-  gap: theme.space.medium,
-})
-
-export const legendAuthor = style({
-  fontFamily: theme.fonts.monospace,
-  color: theme.colors.primary,
-})
-
-export const legendLink = style({
-  color: theme.colors.text.dimmed,
-  ":hover": {
-    color: theme.colors.text.normal,
-    textDecoration: "underline",
-  },
-})
-
-export const note = style({
-  margin: 0,
-  color: theme.colors.text.dimmed,
-})
-
 export const empty = style({
   fontFamily: theme.fonts.monospace,
   color: theme.colors.primary,

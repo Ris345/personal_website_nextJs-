@@ -13,6 +13,12 @@ function shortTitle(title: string): string {
   return at === -1 ? title : title.slice(0, at)
 }
 
+/** The full title, author and note — the spine shows an abbreviated version. */
+function fullLabel(book: Book): string {
+  const base = `${book.title} — ${book.author}`
+  return book.note ? `${base}. ${book.note}` : base
+}
+
 interface IBookshelf {
   books: Book[]
 }
@@ -23,67 +29,44 @@ export function Bookshelf({ books }: IBookshelf) {
   }
 
   return (
-    <>
-      <ul className={style.shelf}>
-        {books.map((book, index) => {
-          const cover = COVERS[index % COVERS.length]
-          const tone = isLightCover(cover) ? "onLight" : "onDark"
-          const spineClass = `${style.spine[cover]} ${
-            style.size[SIZES[index % SIZES.length]]
-          }`
+    <ul className={style.shelf}>
+      {books.map((book, index) => {
+        const cover = COVERS[index % COVERS.length]
+        const tone = isLightCover(cover) ? "onLight" : "onDark"
+        const spineClass = `${style.spine[cover]} ${
+          style.size[SIZES[index % SIZES.length]]
+        }`
 
-          const spine = (
-            <>
-              <span className={style.title[tone]}>{shortTitle(book.title)}</span>
-              <span className={style.author[tone]}>{book.author}</span>
-            </>
-          )
+        const spine = (
+          <>
+            <span className={style.title[tone]}>{shortTitle(book.title)}</span>
+            <span className={style.author[tone]}>{book.author}</span>
+          </>
+        )
 
-          return (
-            <li key={book.title}>
-              {book.link ? (
-                <a
-                  className={spineClass}
-                  href={book.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  // The spine is abbreviated; give assistive tech the whole title.
-                  aria-label={`${book.title} by ${book.author}`}
-                  title={`${book.title} — ${book.author}`}
-                >
-                  {spine}
-                </a>
-              ) : (
-                <div className={spineClass} title={book.title}>
-                  {spine}
-                </div>
-              )}
-            </li>
-          )
-        })}
-        <div className={style.board} aria-hidden="true" />
-      </ul>
-
-      <ul className={style.legend}>
-        {books.map((book) => (
-          <li className={style.legendItem} key={book.title}>
-            <span className={style.legendAuthor}>{book.author}</span>
+        return (
+          <li key={book.title}>
             {book.link ? (
               <a
-                className={style.legendLink}
+                className={spineClass}
                 href={book.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                // The spine is abbreviated; give assistive tech the whole title.
+                aria-label={`${book.title} by ${book.author}`}
+                title={fullLabel(book)}
               >
-                {book.title}
+                {spine}
               </a>
             ) : (
-              <span>{book.title}</span>
+              <div className={spineClass} title={fullLabel(book)}>
+                {spine}
+              </div>
             )}
-            {book.note && <p className={style.note}>{book.note}</p>}
           </li>
-        ))}
-      </ul>
-    </>
+        )
+      })}
+      <div className={style.board} aria-hidden="true" />
+    </ul>
   )
 }
