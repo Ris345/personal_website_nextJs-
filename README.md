@@ -3,7 +3,6 @@
 ## Full Stack Software Engineer & AI Developer
 
 **Website:** https://rishavacharya.dev  
-**Email:** rishav345@gmail.com  
 **GitHub:** https://github.com/Ris345
 
 ## About Me
@@ -112,7 +111,7 @@ I'm always interested in new opportunities and collaborations. Whether you want 
 - Collaborate on something interesting
 - Just say hello
 
-Feel free to reach out at **rishav345@gmail.com**
+Book a time at **[calendly.com/rishavacharya](https://calendly.com/rishavacharya)**, or reach out via [LinkedIn](https://www.linkedin.com/in/rishav-a-0482051a7/).
 
 ## SEO Keywords
 
