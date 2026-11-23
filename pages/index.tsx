@@ -1,12 +1,24 @@
+import type { GetStaticProps } from "next"
 import { GradientBackground } from "../components/GradientBackground"
 import { CallToAction } from "../components/CallToAction"
 import { RandomQuote } from "../components/RandomQuote"
 import * as style from "../styles/home.css"
+import * as blogStyle from "../styles/blog.css"
 import { SectionTitle } from "../components/SectionTitle"
 import Image from "next/image"
+import Link from "next/link"
 import profilePic from "../public/images/profile.jpg"
+import { formatDate } from "../lib/formatDate"
+import { getAllPostMeta, type PostMeta } from "../lib/posts"
 
-export default function Home() {
+/** How many of the latest posts the homepage teases. */
+const HOME_POST_COUNT = 3
+
+interface HomeProps {
+  posts: PostMeta[]
+}
+
+export default function Home({ posts }: HomeProps) {
   return (
     <>
       <section className={style.heroSection} aria-label="Hero">
@@ -218,11 +230,65 @@ export default function Home() {
   </div>
 </section>
 
-      
-      <section className={style.section} aria-label="Contact">
-        <div className={style.sectionInner["centerAlign"]}>
+
+      <section
+        className={style.section}
+        id="blog"
+        aria-label="Blog"
+        style={{ paddingBottom: 0 }}
+      >
+        <div className={style.sectionInner["leftAlign"]}>
           <SectionTitle
             number="04."
+            title="Blog"
+            align="left"
+            subtitle=""
+          />
+          <article style={{ width: "100%" }}>
+            <p>
+              I write about infrastructure, observability, and what it actually
+              takes to keep systems running — published here, not on Medium.
+            </p>
+            {posts.length === 0 ? (
+              <p className={blogStyle.empty}>
+                Nothing published yet. First post coming soon.
+              </p>
+            ) : (
+              <ul className={blogStyle.homeList}>
+                {posts.map((post) => (
+                  <li className={blogStyle.homeListItem} key={post.slug}>
+                    <span className={blogStyle.homeListDate}>
+                      <time dateTime={post.date}>{formatDate(post.date)}</time>
+                      {" · "}
+                      {post.readingTime} min read
+                    </span>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className={blogStyle.homeListTitle}
+                    >
+                      <strong>{post.title}</strong>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <p>
+              <Link href="/blog" className={blogStyle.feedLink}>
+                Read all posts →
+              </Link>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        className={style.section}
+        aria-label="Contact"
+        style={{ paddingTop: 0 }}
+      >
+        <div className={style.sectionInner["centerAlign"]}>
+          <SectionTitle
+            number="05."
             title="Coffee Chat"
             align="center"
           />
@@ -250,4 +316,8 @@ export default function Home() {
       </section>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  return { props: { posts: getAllPostMeta().slice(0, HOME_POST_COUNT) } }
 }

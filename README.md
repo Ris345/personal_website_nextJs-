@@ -48,6 +48,30 @@ Beyond software development, I'm also a musician. I believe there's a strong con
 - [Live Performance](https://www.youtube.com/watch?v=ibXAAM9ROQ8&t=594s)
 - [Studio Recording](https://www.youtube.com/watch?v=vFVneyG_S5o)
 
+## Blog
+
+Posts live as markdown in `content/blog/<slug>.md` and are rendered at build
+time — no CMS, no platform.
+
+```bash
+npm run new-post "Why observability beats monitoring"   # scaffolds a draft
+npm run dev                                             # drafts are visible here
+```
+
+Frontmatter fields:
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| `title` | yes | Used for the heading, `<title>`, and OG tags |
+| `date` | yes | `YYYY-MM-DD`; drives ordering and `datePublished` |
+| `excerpt` | no | Shown on `/blog`, used as the meta description and RSS summary |
+| `tags` | no | Array of strings |
+| `draft` | no | `true` keeps it out of the published site and feeds |
+| `canonicalUrl` | no | Point at the original when the post ran elsewhere first |
+
+Publishing is `draft: false` plus a commit. `npm run build` regenerates
+`public/sitemap.xml` and `public/rss.xml` from the posts automatically.
+
 ## Technical Skills
 
 ### Programming Languages

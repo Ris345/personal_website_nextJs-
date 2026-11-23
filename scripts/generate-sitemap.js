@@ -8,10 +8,9 @@
 const { execSync } = require("child_process")
 const fs = require("fs")
 const path = require("path")
+const { publishedPosts } = require("./posts")
 
 const SITE_URL = "https://rishavacharya.dev"
-
-const routes = [{ path: "/", changefreq: "weekly", priority: "1.0" }]
 
 function lastModified() {
   try {
@@ -24,6 +23,19 @@ function lastModified() {
 }
 
 const lastmod = lastModified()
+const posts = publishedPosts()
+
+const routes = [
+  { path: "/", changefreq: "weekly", priority: "1.0", lastmod },
+  { path: "/blog", changefreq: "weekly", priority: "0.9", lastmod },
+  // A post's own publish date is a truer lastmod than the latest commit.
+  ...posts.map((post) => ({
+    path: `/blog/${post.slug}`,
+    changefreq: "monthly",
+    priority: "0.8",
+    lastmod: post.date || lastmod,
+  })),
+]
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -31,7 +43,7 @@ ${routes
   .map(
     (route) => `  <url>
     <loc>${SITE_URL}${route.path}</loc>
-    <lastmod>${lastmod}</lastmod>
+    <lastmod>${route.lastmod}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
   </url>`
@@ -42,4 +54,6 @@ ${routes
 
 const out = path.join(__dirname, "..", "public", "sitemap.xml")
 fs.writeFileSync(out, xml)
-console.log(`Wrote ${out} (lastmod ${lastmod})`)
+console.log(
+  `Wrote ${out} (${routes.length} urls, ${posts.length} posts, lastmod ${lastmod})`
+)

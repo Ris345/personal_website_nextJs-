@@ -125,6 +125,13 @@ export function Seo() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
 
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Rishav Acharya — Blog"
+          href="/rss.xml"
+        />
+
         {/* Schema.org structured data */}
         <script
           type="application/ld+json"

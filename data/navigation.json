@@ -18,5 +18,10 @@
     "href": "/#certifications",
     "prefix": "03.",
     "label": "Certifications"
+  },
+  {
+    "href": "/blog",
+    "prefix": "04.",
+    "label": "Blog"
   }
 ]
