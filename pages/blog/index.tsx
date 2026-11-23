@@ -32,14 +32,9 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
       />
       <div className={style.page}>
         <SectionTitle number="04." title="Blog" align="left" />
-        <p className={style.intro}>
-          Notes on infrastructure, observability, and the things that keep
-          production alive — written here rather than on someone else&apos;s
-          platform.
-        </p>
 
         {posts.length === 0 ? (
-          <p className={style.empty}>Coming soon.</p>
+          <p className={style.empty}>Coming soon</p>
         ) : (
           <ul className={style.postList}>
             {posts.map((post) => (

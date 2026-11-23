@@ -245,36 +245,36 @@ export default function Home({ posts }: HomeProps) {
             subtitle=""
           />
           <article style={{ width: "100%" }}>
-            <p>
-              I write about infrastructure, observability, and what it actually
-              takes to keep systems running — published here, not on Medium.
-            </p>
             {posts.length === 0 ? (
-              <p className={blogStyle.empty}>Coming soon.</p>
+              <p className={blogStyle.empty}>Coming soon</p>
             ) : (
-              <ul className={blogStyle.homeList}>
-                {posts.map((post) => (
-                  <li className={blogStyle.homeListItem} key={post.slug}>
-                    <span className={blogStyle.homeListDate}>
-                      <time dateTime={post.date}>{formatDate(post.date)}</time>
-                      {" · "}
-                      {post.readingTime} min read
-                    </span>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className={blogStyle.homeListTitle}
-                    >
-                      <strong>{post.title}</strong>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <>
+                <ul className={blogStyle.homeList}>
+                  {posts.map((post) => (
+                    <li className={blogStyle.homeListItem} key={post.slug}>
+                      <span className={blogStyle.homeListDate}>
+                        <time dateTime={post.date}>
+                          {formatDate(post.date)}
+                        </time>
+                        {" · "}
+                        {post.readingTime} min read
+                      </span>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className={blogStyle.homeListTitle}
+                      >
+                        <strong>{post.title}</strong>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <p>
+                  <Link href="/blog" className={blogStyle.feedLink}>
+                    Read all posts →
+                  </Link>
+                </p>
+              </>
             )}
-            <p>
-              <Link href="/blog" className={blogStyle.feedLink}>
-                Read all posts →
-              </Link>
-            </p>
           </article>
         </div>
       </section>
