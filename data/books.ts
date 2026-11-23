@@ -28,6 +28,12 @@ const books: Book[] = [
     author: "Gene Kim, Kevin Behr, George Spafford",
     link: "https://www.goodreads.com/en/book/show/17255186-the-phoenix-project",
   },
+  {
+    title:
+      "Why Soccer Matters: A Look at More Than Sixty Years of International Soccer",
+    author: "Pelé, Brian Winter",
+    link: "https://www.goodreads.com/en/book/show/18114319-why-soccer-matters",
+  },
 ]
 
 export default books
