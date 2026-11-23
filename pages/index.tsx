@@ -8,6 +8,7 @@ import { SectionTitle } from "../components/SectionTitle"
 import Image from "next/image"
 import Link from "next/link"
 import profilePic from "../public/images/profile.jpg"
+import books from "../data/books"
 import { formatDate } from "../lib/formatDate"
 import { getAllPostMeta, type PostMeta } from "../lib/posts"
 
@@ -231,12 +232,7 @@ export default function Home({ posts }: HomeProps) {
 </section>
 
 
-      <section
-        className={style.section}
-        id="blog"
-        aria-label="Blog"
-        style={{ paddingBottom: 0 }}
-      >
+      <section className={style.section} id="blog" aria-label="Blog">
         <div className={style.sectionInner["leftAlign"]}>
           <SectionTitle
             number="04."
@@ -283,6 +279,42 @@ export default function Home({ posts }: HomeProps) {
         </div>
       </section>
 
+      <section className={style.section} id="bookshelf" aria-label="Bookshelf">
+        <div className={style.sectionInner["leftAlign"]}>
+          <SectionTitle
+            number="05."
+            title="Bookshelf"
+            align="left"
+            subtitle=""
+          />
+          <article style={{ width: "100%" }}>
+            {books.length === 0 ? (
+              <p className={blogStyle.empty}>Coming soon</p>
+            ) : (
+              <ul className={style.bookList}>
+                {books.map((book) => (
+                  <li className={style.bookItem} key={book.title}>
+                    <span className={style.bookAuthor}>{book.author}</span>
+                    {book.link ? (
+                      <a
+                        href={book.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <strong>{book.title}</strong>
+                      </a>
+                    ) : (
+                      <strong>{book.title}</strong>
+                    )}
+                    {book.note && <p className={style.bookNote}>{book.note}</p>}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </article>
+        </div>
+      </section>
+
       <section
         className={style.section}
         aria-label="Contact"
@@ -290,7 +322,7 @@ export default function Home({ posts }: HomeProps) {
       >
         <div className={style.sectionInner["centerAlign"]}>
           <SectionTitle
-            number="05."
+            number="06."
             title="Coffee Chat"
             align="center"
           />
