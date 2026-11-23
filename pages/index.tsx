@@ -5,6 +5,7 @@ import { RandomQuote } from "../components/RandomQuote"
 import * as style from "../styles/home.css"
 import * as blogStyle from "../styles/blog.css"
 import { SectionTitle } from "../components/SectionTitle"
+import { Bookshelf } from "../components/Bookshelf"
 import Image from "next/image"
 import Link from "next/link"
 import profilePic from "../public/images/profile.jpg"
@@ -288,29 +289,7 @@ export default function Home({ posts }: HomeProps) {
             subtitle=""
           />
           <article style={{ width: "100%" }}>
-            {books.length === 0 ? (
-              <p className={blogStyle.empty}>Coming soon</p>
-            ) : (
-              <ul className={style.bookList}>
-                {books.map((book) => (
-                  <li className={style.bookItem} key={book.title}>
-                    <span className={style.bookAuthor}>{book.author}</span>
-                    {book.link ? (
-                      <a
-                        href={book.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <strong>{book.title}</strong>
-                      </a>
-                    ) : (
-                      <strong>{book.title}</strong>
-                    )}
-                    {book.note && <p className={style.bookNote}>{book.note}</p>}
-                  </li>
-                ))}
-              </ul>
-            )}
+            <Bookshelf books={books} />
           </article>
         </div>
       </section>

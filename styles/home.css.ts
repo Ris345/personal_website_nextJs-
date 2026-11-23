@@ -198,35 +198,6 @@ export const imageContainer = styleVariants({
   ],
 })
 
-export const bookList = style({
-  listStyle: "none",
-  margin: 0,
-  padding: 0,
-  display: "flex",
-  flexDirection: "column",
-  gap: theme.space.large,
-  width: "100%",
-})
-
-export const bookItem = style({
-  display: "flex",
-  flexDirection: "column",
-  gap: theme.space.extraSmall,
-  maxWidth: "650px",
-})
-
-export const bookAuthor = style({
-  fontFamily: theme.fonts.monospace,
-  fontSize: theme.fontSize.extraSmall,
-  color: theme.colors.primary,
-})
-
-export const bookNote = style({
-  margin: 0,
-  fontSize: theme.fontSize.extraSmall,
-  lineHeight: theme.lineHeight.small,
-})
-
 export const profileImage = style({
   borderRadius: theme.borderRadius,
   objectFit: "cover",
