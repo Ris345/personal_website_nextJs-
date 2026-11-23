@@ -10,6 +10,10 @@ import Image from "next/image"
 import Link from "next/link"
 import profilePic from "../public/images/profile.jpg"
 import books from "../data/books"
+import talks from "../data/speaking"
+import projects from "../data/projects"
+import { certifications, badges } from "../data/credentials"
+import * as card from "../styles/cards.css"
 import { formatDate } from "../lib/formatDate"
 import { getAllPostMeta, type PostMeta } from "../lib/posts"
 
@@ -82,28 +86,23 @@ export default function Home({ posts }: HomeProps) {
             subtitle=""
           />
           <div>
-            <p>I share my expertise in AI and software development through speaking engagements and workshops.</p>
-            <ul>
-              <li>
-                <a href="https://youtu.be/m52p3ERt2Io?t=646" target="_blank" rel="noopener noreferrer">
-                  <strong>AI Agent SDK Anote</strong> - Technical deep dive into AI agent development
-                </a>
-              </li>
-              <li>
-                <a href="https://www.aicamp.ai/event/eventdetails/W2025010100" target="_blank" rel="noopener noreferrer">
-                  <strong>Agentic AI 5 day challenge</strong> - Hands-on workshop on building AI agents
-                </a>
-              </li>
-                <li>
-                <a href="https://www.youtube.com/watch?v=kb2X3jGHz3I" target="_blank" rel="noopener noreferrer">
-                  <strong>Infrastructure, Intelligence, and Developer Velocity</strong> speeding up dev teams
-                </a>
-              </li>
-                 <li>
-                <a href="https://www.youtube.com/watch?v=7OB51V_PIIo&t=560s" target="_blank" rel="noopener noreferrer">
-                  <strong>Pale Blue Dot Launch</strong> Autonomous Intelligence Product Release 
-                </a>
-              </li>
+            <p className={card.intro}>I share my expertise in AI and software development through speaking engagements and workshops.</p>
+            <ul className={card.grid["pair"]}>
+              {talks.map((talk) => (
+                <li key={talk.title}>
+                  <a
+                    className={card.cardLink}
+                    href={talk.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className={card.eyebrow}>{talk.host}</span>
+                    <h3 className={card.title}>{talk.title}</h3>
+                    <p className={card.body}>{talk.description}</p>
+                    <span className={card.action}>{talk.action} ↗</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </article>
@@ -118,40 +117,32 @@ export default function Home({ posts }: HomeProps) {
             subtitle=""
           />
           
-          <article>
-            <h3>LifeOS — AI Productivity Agent</h3>
-            <p>An intelligent desktop companion that helps you stay focused, break down goals, and maintain a healthy flow state. Features a Goal Strategy Engine that turns large goals into actionable weekly plans, an AI Morning Briefing that generates personalized daily plans, and a Flow State Guard that detects distractions and nudges you back to focus—backed by real-time usage analytics.</p>
-            <p>Built with a Tauri (Rust) desktop shell, React/TypeScript/TailwindCSS frontend, and a Python FastAPI backend with OpenAI GPT-4o for the AI layer.</p>
-            <a href="https://github.com/Ris345/LifeOS-Productivity-AI-Agent" target="_blank" rel="noopener noreferrer">
-              <strong>View Repository</strong>
-            </a>
-          </article>
+          <ul className={card.grid["single"]}>
+            {projects.map((project) => (
+              <li key={project.name}>
+                <div className={card.card}>
+                  <h3 className={card.title}>{project.name}</h3>
+                  <p className={card.body}>{project.description}</p>
+                  <ul className={card.tagRow}>
+                    {project.tags.map((t) => (
+                      <li className={card.tag} key={t}>
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    className={card.action}
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Repository ↗
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
 
-          <br />
-          <br />
-          <br />
-
-          <article>
-            <h3>Post Automator</h3>
-            <p>A serverless automation that posts to LinkedIn every Sunday, generating the content with OpenAI's GPT-4o-mini and publishing it unattended on a schedule.</p>
-            <p>Runs as a containerized Python 3.12 Lambda triggered by EventBridge Scheduler, built and pushed via ECR, with all infrastructure defined in Terraform.</p>
-            <a href="https://github.com/Ris345/post-automator" target="_blank" rel="noopener noreferrer">
-              <strong>View Repository</strong>
-            </a>
-          </article>
-
-          <br />
-          <br />
-          <br />
-
-          <article>
-            <h3>Grandma's Pill Buddy</h3>
-            <p>An AI voice agent that calls elderly patients daily to check medication adherence and wellbeing, built for the ABI Hackathon. Claude drives the conversation, ElevenLabs handles voice synthesis, and Twilio places the call and texts a caregiver if a dose was missed. A judge agent evaluates every call afterward and feeds the learnings into the next conversation's prompt, making the agent self-improving over time.</p>
-            <p>Three FastAPI services (voice agent, backend, judge agent) running over Docker Compose, with Supabase for patient data and call logs.</p>
-            <a href="https://github.com/Ris345/voice-hack" target="_blank" rel="noopener noreferrer">
-              <strong>View Repository</strong>
-            </a>
-          </article>
         </div>
       </section>
       
@@ -194,41 +185,43 @@ export default function Home({ posts }: HomeProps) {
       align="left"
       subtitle=""
     />
-    <article>
-      <h3>Certifications</h3>
-      <ul>
-        <li>
-          <a 
-            href="https://www.credly.com/badges/36cf2c57-0ef3-4402-9911-3d2472023e20" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <strong>Datadog Certified: APM & Distributed Tracing Fundamentals</strong>
-          </a>
-        </li>
+    <div style={{ width: "100%" }}>
+      <p className={card.groupLabel}>Certifications</p>
+      <ul className={card.grid["pair"]}>
+        {certifications.map((item) => (
+          <li key={item.name}>
+            <a
+              className={card.cardLink}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={card.eyebrow}>{item.issuer}</span>
+              <h3 className={card.title}>{item.name}</h3>
+              <span className={card.action}>Verify ↗</span>
+            </a>
+          </li>
+        ))}
       </ul>
-      <h3>Badges</h3>
-      <ul>
-        <li>
-          <a 
-            href="https://www.credly.com/badges/d90a1f72-47b1-4068-9103-772e2732bb37/public_url" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <strong>AWS Cloud Quest: Solutions Architect</strong>
-          </a>
-        </li>
-          <li>
-          <a 
-            href="https://www.credly.com/org/amazon-web-services/badge/aws-cloud-quest-cloud-practitioner" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <strong>AWS Cloud Quest: Cloud Practitioner</strong>
-          </a>
-        </li>
+
+      <p className={card.groupLabel}>Badges</p>
+      <ul className={card.grid["pair"]}>
+        {badges.map((item) => (
+          <li key={item.name}>
+            <a
+              className={card.cardLink}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={card.eyebrow}>{item.issuer}</span>
+              <h3 className={card.title}>{item.name}</h3>
+              <span className={card.action}>Verify ↗</span>
+            </a>
+          </li>
+        ))}
       </ul>
-    </article>
+    </div>
   </div>
 </section>
 

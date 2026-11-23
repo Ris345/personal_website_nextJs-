@@ -9,11 +9,11 @@ export const shelf = style({
   position: "relative",
   display: "flex",
   alignItems: "flex-end",
-  gap: "6px",
+  gap: "5px",
   listStyle: "none",
   margin: 0,
   // Room for the board below and for a spine to lift on hover.
-  padding: "20px 0 18px",
+  padding: "14px 0 14px",
   width: "100%",
   // Narrow viewports scroll the shelf sideways rather than squashing spines.
   overflowX: "auto",
@@ -26,7 +26,7 @@ export const board = style({
   left: 0,
   right: 0,
   bottom: 0,
-  height: "14px",
+  height: "11px",
   borderRadius: "3px",
   background: `linear-gradient(180deg, ${theme.colors.primary} 0%, #5a2a20 55%, #2a0b06 100%)`,
   boxShadow: "rgba(0, 0, 0, 0.55) 0px 10px 18px -6px",
@@ -40,7 +40,7 @@ const baseSpine = style({
   // Vertical-rl plus a 180deg turn reads bottom-to-top, like most real spines.
   writingMode: "vertical-rl",
   transform: "rotate(180deg)",
-  padding: "1rem 0.55rem",
+  padding: "0.8rem 0.4rem",
   borderRadius: "2px 4px 4px 2px",
   boxSizing: "border-box",
   flexShrink: 0,
@@ -57,7 +57,7 @@ const baseSpine = style({
     },
     "&:hover, &:focus-visible": {
       // Pulled part-way off the shelf.
-      transform: "rotate(180deg) translateY(-14px)",
+      transform: "rotate(180deg) translateY(-10px)",
       boxShadow: "rgba(0, 0, 0, 0.6) 0px 16px 24px -10px",
       filter: "brightness(1.12)",
     },
@@ -94,10 +94,10 @@ export const spine = styleVariants({
 
 /** Height and width variation, cycled by index. */
 export const size = styleVariants({
-  tall: { height: "340px", width: "72px" },
-  mid: { height: "310px", width: "60px" },
-  short: { height: "290px", width: "78px" },
-  slim: { height: "325px", width: "54px" },
+  tall: { height: "230px", width: "52px" },
+  mid: { height: "210px", width: "44px" },
+  short: { height: "196px", width: "56px" },
+  slim: { height: "220px", width: "40px" },
 })
 
 const baseSpineText = style({
@@ -113,8 +113,8 @@ export const title = styleVariants({
     {
       color: "#ffffff",
       fontWeight: theme.fontWeight.bold,
-      fontSize: "0.95rem",
-      letterSpacing: "0.02em",
+      fontSize: "0.8rem",
+      letterSpacing: "0.01em",
       margin: 0,
     },
   ],
@@ -123,8 +123,8 @@ export const title = styleVariants({
     {
       color: theme.colors.background,
       fontWeight: theme.fontWeight.bold,
-      fontSize: "0.95rem",
-      letterSpacing: "0.02em",
+      fontSize: "0.8rem",
+      letterSpacing: "0.01em",
       margin: 0,
     },
   ],
@@ -135,7 +135,7 @@ export const author = styleVariants({
     baseSpineText,
     {
       fontFamily: theme.fonts.monospace,
-      fontSize: "0.7rem",
+      fontSize: "0.62rem",
       color: "rgba(255,255,255,0.75)",
     },
   ],
@@ -143,7 +143,7 @@ export const author = styleVariants({
     baseSpineText,
     {
       fontFamily: theme.fonts.monospace,
-      fontSize: "0.7rem",
+      fontSize: "0.62rem",
       color: "rgba(55,15,8,0.75)",
     },
   ],
