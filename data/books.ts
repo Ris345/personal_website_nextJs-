@@ -34,6 +34,17 @@ const books: Book[] = [
     author: "Pelé, Brian Winter",
     link: "https://www.goodreads.com/en/book/show/18114319-why-soccer-matters",
   },
+  {
+    title: "The Martian",
+    author: "Andy Weir",
+    link: "https://www.goodreads.com/en/book/show/18007564-the-martian",
+  },
+  {
+    title:
+      "The Platform Engineer's Handbook: Build secure, developer-focused platforms that streamline modern software delivery",
+    author: "Ajay Chankramath",
+    link: "https://www.goodreads.com/book/show/241654092-the-platform-engineer-s-handbook",
+  },
 ]
 
 export default books
