@@ -22,6 +22,12 @@ const books: Book[] = [
     author: "Brian Christian",
     link: "https://www.goodreads.com/en/book/show/50489349-the-alignment-problem",
   },
+  {
+    title:
+      "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win",
+    author: "Gene Kim, Kevin Behr, George Spafford",
+    link: "https://www.goodreads.com/en/book/show/17255186-the-phoenix-project",
+  },
 ]
 
 export default books
