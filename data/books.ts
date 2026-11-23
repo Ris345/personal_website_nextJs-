@@ -17,6 +17,11 @@ const books: Book[] = [
     author: "Ray Kurzweil",
     link: "https://www.goodreads.com/en/book/show/45024007-the-singularity-is-nearer",
   },
+  {
+    title: "The Alignment Problem: Machine Learning and Human Values",
+    author: "Brian Christian",
+    link: "https://www.goodreads.com/en/book/show/50489349-the-alignment-problem",
+  },
 ]
 
 export default books
