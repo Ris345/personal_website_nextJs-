@@ -39,9 +39,7 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
         </p>
 
         {posts.length === 0 ? (
-          <p className={style.empty}>
-            Nothing published yet. First post coming soon.
-          </p>
+          <p className={style.empty}>Coming soon.</p>
         ) : (
           <ul className={style.postList}>
             {posts.map((post) => (
@@ -76,10 +74,6 @@ export default function BlogIndex({ posts }: BlogIndexProps) {
             ))}
           </ul>
         )}
-
-        <a className={style.feedLink} href="/rss.xml">
-          Subscribe via RSS →
-        </a>
       </div>
     </>
   )

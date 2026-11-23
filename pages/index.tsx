@@ -250,9 +250,7 @@ export default function Home({ posts }: HomeProps) {
               takes to keep systems running — published here, not on Medium.
             </p>
             {posts.length === 0 ? (
-              <p className={blogStyle.empty}>
-                Nothing published yet. First post coming soon.
-              </p>
+              <p className={blogStyle.empty}>Coming soon.</p>
             ) : (
               <ul className={blogStyle.homeList}>
                 {posts.map((post) => (

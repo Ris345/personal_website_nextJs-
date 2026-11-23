@@ -88,9 +88,16 @@ export const tag = style({
   padding: "0.15rem 0.75rem",
 })
 
+/** Placeholder box shown while there are no published posts. */
 export const empty = style({
   fontFamily: theme.fonts.monospace,
-  color: theme.colors.text.dimmed,
+  color: theme.colors.primary,
+  border: `1px dashed ${theme.colors.grey}`,
+  borderRadius: theme.borderRadius,
+  padding: "2rem 1.5rem",
+  textAlign: "center",
+  width: "100%",
+  maxWidth: "650px",
 })
 
 export const backLink = style({
