@@ -5,11 +5,9 @@ import { RandomQuote } from "../components/RandomQuote"
 import * as style from "../styles/home.css"
 import * as blogStyle from "../styles/blog.css"
 import { SectionTitle } from "../components/SectionTitle"
-import { Bookshelf } from "../components/Bookshelf"
 import Image from "next/image"
 import Link from "next/link"
 import profilePic from "../public/images/profile.jpg"
-import books from "../data/books"
 import talks from "../data/speaking"
 import projects from "../data/projects"
 import { certifications, badges } from "../data/credentials"
@@ -117,7 +115,7 @@ export default function Home({ posts }: HomeProps) {
             subtitle=""
           />
           
-          <ul className={card.grid["single"]}>
+          <ul className={card.grid["pair"]}>
             {projects.map((project) => (
               <li key={project.name}>
                 <div className={card.card}>
@@ -273,20 +271,6 @@ export default function Home({ posts }: HomeProps) {
         </div>
       </section>
 
-      <section className={style.section} id="bookshelf" aria-label="Bookshelf">
-        <div className={style.sectionInner["leftAlign"]}>
-          <SectionTitle
-            number="05."
-            title="Bookshelf"
-            align="left"
-            subtitle=""
-          />
-          <article style={{ width: "100%" }}>
-            <Bookshelf books={books} />
-          </article>
-        </div>
-      </section>
-
       <section
         className={style.section}
         aria-label="Contact"
@@ -294,7 +278,7 @@ export default function Home({ posts }: HomeProps) {
       >
         <div className={style.sectionInner["centerAlign"]}>
           <SectionTitle
-            number="06."
+            number="05."
             title="Coffee Chat"
             align="center"
           />

@@ -3,11 +3,11 @@ import { theme } from "./theme.css"
 
 export const section = style({
   margin: "0px auto",
-  padding: "100px 0px",
+  padding: "68px 0px",
   maxWidth: "1000px",
   "@media": {
     "screen and (max-width: 768px)": {
-      padding: "80px 0px",
+      padding: "52px 0px",
     },
   },
 })
@@ -112,7 +112,6 @@ export const pillsLink = style({
 const baseSectionInner = style({
   display: "flex",
   flexDirection: "column",
-  minHeight: "300px", //Remove
 })
 
 export const sectionInner = styleVariants({
